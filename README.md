@@ -1,5 +1,5 @@
-# EVent
+# Event
  
-# BASIC Event MANAGEMENT BACKEND
+# BASIC EVENT MANAGEMENT BACKEND
 Using Django Framework
 
