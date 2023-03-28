@@ -1,6 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# class SiidaaUser(AbstractUser):
+#     is_organizer = models.BooleanField(null=True, blank=True)
+#     is_attendee = models.BooleanField(null=True, blank=True)
+#     organizer_name = models.CharField( max_length=200,null=True, blank=True)
+
 class Category(models.Model):
     name = models.CharField(max_length=50 , default=False)
     created_at = models.DateTimeField(auto_now_add=True)

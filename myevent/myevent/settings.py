@@ -74,7 +74,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myevent.wsgi.application'
 
-
+# AUTH_USER_MODEL ='api.SiidaaUser'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 

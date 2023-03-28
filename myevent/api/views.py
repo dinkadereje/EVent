@@ -1,17 +1,19 @@
 from django.shortcuts import get_object_or_404
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from api.serializers import CategorySerializer, CountrySerializer, CitySerializer, EventSerializer, TicketSerializer, RegistrationSerializer, PaymentSerializer
 from api.models import Category, Country, City, Event, Ticket, Registration, Payment
 
 
 class CategoryViewSet(ViewSet):
-
-    def list(self, request):
+    
+    def list(LoginRequiredMixin,self, request):
         queryset = Category.objects.order_by('pk')
         serializer = CategorySerializer(queryset, many=True)
         return Response(serializer.data)
-
+ 
     def create(self, request):
         serializer = CategorySerializer(data=request.data)
         if serializer.is_valid():
